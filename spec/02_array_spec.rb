@@ -5,7 +5,7 @@ describe Array do
   # group is a class. The 'subject' will be an instance of that class.
   # https://relishapp.com/rspec/rspec-core/v/2-11/docs/subject/implicitly-defined-subject
 
-  # Note: Using an implicit subject is not recommended for most situations.
+  # NOTE: Using an implicit subject is not recommended for most situations.
   # The next lesson will cover explicit subjects, which are recommended over
   # implicit subjects.
 
@@ -72,27 +72,29 @@ end
 describe Array do
   context 'when updating an implicit subject' do
     # remove the 'x' before running this test
-    xit 'is empty' do
+    it 'is empty' do
       # Write a test to expect the subject to be empty.
+      expect(subject).to be_empty
     end
 
     # remove the 'x' before running this test
-    xit 'updates length to 1' do
+    it 'updates length to 1' do
       # Update the implicit subject to make this test pass.
+      subject << rand
       expect(subject.length).to eq(1)
     end
   end
 
   context 'when using one let variable on two tests' do
     # Make a let variable that will pass both tests.
-
+    let(:lucky_numbers) { [0, 0, 42] }
     # remove the 'x' before running this test
-    xit 'has length of 3' do
+    it 'has length of 3' do
       expect(lucky_numbers.length).to eq(3)
     end
 
     # remove the 'x' before running this test
-    xit 'has sum of 42' do
+    it 'has sum of 42' do
       expect(lucky_numbers.sum).to eq(42)
     end
   end
