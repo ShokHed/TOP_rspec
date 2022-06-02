@@ -124,10 +124,10 @@ describe MagicSeven do
     end
 
     context 'when the random number is 298374829' do
-      subject(:game_298374829) { described_class.new(298374829) }
+      subject(:game298374829) { described_class.new(298374829) }
       # remove the 'x' before running this test
       it 'will return 7' do
-        result = game.play
+        result = game298374829.play
         expect(result).to eq(7)
       end
     end
